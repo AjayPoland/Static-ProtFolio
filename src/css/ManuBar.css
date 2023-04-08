@@ -1,0 +1,43 @@
+@import './root/root.css';
+.manu-bar{
+    width: 100%;
+    background-color: var(--background-color1);
+}
+.col{
+    margin: 0;
+    align-items: center;
+}
+.nav{
+display: flex;
+justify-content: end;
+}
+.nav>.nav-item{
+    display: flex;
+    align-items: center;
+}
+.nav>.nav-item>a{
+    padding: 20px 25px;
+    margin: 0;
+    color:var(--background-color);
+    font-weight: bold;
+}
+.btn-admin-col{
+    display: flex;
+    justify-content: end;
+}
+.btn-admin{
+    padding: 0px 25px;
+    margin:0 2.5rem; 
+    background-color: transparent;
+    color:var(--background-color);
+    border:none;
+    font-weight: bold;
+}
+.btn-admin:hover{
+    background-color: var(--background-color);
+    color:var(--background-color1);
+} 
+.nav>.nav-item>a:hover{
+    background-color: var(--background-color);
+    color:var(--background-color1)
+}
