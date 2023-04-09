@@ -24,10 +24,21 @@
   gap: 5px;
   grid-template-columns: 64% auto;  
 }
-.grid-container,h2{
-  font-family: 'Sofia Sans Extra Condensed', sans-serif;
-  font-size: 1.5rem;
+.grid-container,h2,h4,h5{
+  /* font-family: 'Sofia Sans Extra Condensed', sans-serif; */
+  font-family: var(--custome-fnt);
+  font-size: 1.5 rem;
 
+}
+h4,h5{
+  font-weight: bold;
+}
+.cntct-detail>a{
+  color:#e9ecef;
+}
+.cntct-detail>a:hover{
+  color:#e9ecef;
+  font-weight: bold;
 }
 .grid-container >.name>h1 {
   font-size: 2em;

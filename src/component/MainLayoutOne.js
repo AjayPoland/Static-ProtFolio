@@ -14,28 +14,29 @@ import {MemoizedAbout} from "./About";
 import {MemoizedResume} from "./Resume";
 import {MemoizedProject} from "./Project";
 import {MemoizedContect} from "./Contect";
+import Contect from "./Contect"
 
 export const userContext = React.createContext();
 const ContextProvider = userContext.Provider;
 
 function MainLayoutOne() {
   console.log("Main Page.")
-  const [triger, setTriger] = useState(false);
+  const [logTriger, setLogTriger] = useState(false);
+  const [logBtn,setLogBtn]=useState({status:false,value:"Log In"})
   const home = useRef();
   const about = useRef();
   const resume = useRef();
   const project = useRef();
   const contact = useRef();
 
-  const [style,setStyle]=useState({})
-
-  function handleEvent(arg) {
-    setTriger(arg);
+  const logOut=()=>{
+      setLogBtn({status:false,value:"log In"})
   }
   function testhandle(arg) {
     console.log(arg.current.id);
     arg.current.scrollIntoView({block:"end",inline:"nearest", behavior: "smooth" });
   }
+  
   function testhandle2(arg) {
     console.log(arg);
     arg.current.scrollIntoView({block:"center",inline:"nearest", behavior: "smooth" });
@@ -48,10 +49,13 @@ function MainLayoutOne() {
   return (
     <ContextProvider
       value={{
-        frmClose: handleEvent,
+        logBtn:logBtn,
+        changeLogBtn:setLogBtn,
+        frmClose: setLogTriger,
         testhandle: testhandle,
         testhandle2: testhandle2,
         scrollhandle:scrollhandle,
+        logOut:logOut,
         home:home,
         about: about,
         resume: resume,
@@ -60,10 +64,10 @@ function MainLayoutOne() {
       }}
     >
       <div className="body pt-4">
-        <div className="login-form">{triger ? <MemoizedLoginMain /> : null} </div>
+        <div className="login-form">{logTriger ? <MemoizedLoginMain /> : null} </div>
         <Row className="manu-bar">
           <Col className="p-0">
-            <MemoizedManuBar triger={setTriger} />
+            <MemoizedManuBar triger={setLogTriger} />
           </Col>
         </Row>
         <Row className="home-page">
@@ -92,6 +96,7 @@ function MainLayoutOne() {
         </Row>
         <Row className="contain">
           <Col ref={contact} className="p-0">
+            {/* <Contect/> */}
             <MemoizedContect />
           </Col>
         </Row>

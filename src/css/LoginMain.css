@@ -1,5 +1,12 @@
 @import './root/root.css';
 
+/* for removing the arrow button from number input field. */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .frm-close{
   position: absolute;
     top: 5px;
@@ -46,11 +53,12 @@
   .singin-card{
     border:none;
     background: transparent;
-    margin: 0.5rem 0.5rem 0 0.5rem;
+    margin: 0.5rem 0.5rem 0 0.5r;
   }
   .singin-logo{
+    margin-left: 5px;
+    margin-top: 5px;
     width:3.125rem;
     height:auto;
   }	
-
   

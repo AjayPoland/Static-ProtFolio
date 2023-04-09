@@ -15,13 +15,17 @@ function Contect() {
 
   const handleInput = (e) => {
     const { name, value } = e.target;
+    if(name === "number"){
+      setstate((prevstate) => ({ ...prevstate,[name]: parseInt(value)}));
+      return;
+    }
     setstate((prevstate) => ({ ...prevstate, [name]: value }));
   };
 
   const notice = (e) => {
+    Array.from(e.target).forEach((ev) => (ev.value = ""));
     e.preventDefault();
-    console.log(state);
-    return state ? alert("Sorry for the inconvince \n message not send \n still working in the backhand.") : null;
+    return state ? alert(`Entered Details are:\n name: ${state.name}\n emial: ${state.email} \n contect number ${state.number}.`) : null;
   };
   return (
     <div className="contact-main">
@@ -81,7 +85,7 @@ function Contect() {
           </Form.Group>
           <Form.Group>
             <Form.Control
-              name="Sender Name"
+              name="name"
               as="input"
               placeholder="Enter your name."
               onChange={handleInput}
@@ -91,6 +95,13 @@ function Contect() {
               name="email"
               type="email"
               placeholder="Enter your valid email address"
+              required
+              onChange={handleInput}
+            ></Form.Control>
+            <Form.Control
+              name="number"
+              type="number"
+              placeholder="Contect Number"
               required
               onChange={handleInput}
             ></Form.Control>

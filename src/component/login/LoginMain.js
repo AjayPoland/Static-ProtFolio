@@ -1,8 +1,10 @@
-import React, { useState, useRef,useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
+
+import { userContext } from "../MainLayoutOne";
 
 //styling bootstrap css
 import "bootstrap/dist/css/bootstrap.min.css";
-import SingIn from "./SingIn";
+import { MemoizedSingIn } from "./SingIn";
 import SingUp from "./SingUp";
 
 //external styling.
@@ -12,8 +14,9 @@ export const context = React.createContext();
 const ContextProvider = context.Provider;
 
 function LoginMain() {
+  console.log("login main");
 
-  console.log('login main');
+  const contextInput = useContext(userContext);
 
   const [isSingIn, setIsSingIn] = useState(true);
   const [userInfo, setUserInfo] = useState();
@@ -22,25 +25,47 @@ function LoginMain() {
   const username = useRef();
   const firstname = useRef();
 
-  useEffect(()=>{
-    console.log(username);
-    isSingIn?username.current.focus():firstname.current.focus();
-  },[]);
+  useEffect(() => {
+    isSingIn ? username.current.focus() : firstname.current.focus();
+  }, []);
 
   const setSingInInput = (e) => {
     const { name, value } = e.target;
-    setUserInfo({ ...userInfo, [name]: value });
+    setUserInfo((prevstate) => ({ ...prevstate, [name]: value }));
+  };
+  const singIn = async (e, triger) => {
+    if (userData) {
+      if (
+        userInfo.username === userData.username &&
+        userInfo.password === userData.password
+      ) {
+        contextInput.changeLogBtn({ status: true, value: "Logged In" });
+        contextInput.frmClose(triger);
+        alert("Successfull!");
+      } else {
+        alert(
+          "Enter the username and password, \n you had entered while singing up."
+        );
+        Array.from(e.target).forEach((ev) => (ev.value = ""));
+      }
+    } else {
+      alert("Please sing up before sing in!");
+      setIsSingIn(false);
+    }
+    e.preventDefault();
   };
   const setSingUpInput = (e) => {
     const { name, value } = e.target;
     setUserData({ ...userData, [name]: value });
   };
 
-  const handleOnSubmit = (e) => {
-    console.log("check");
-    if (isSingIn === false) alert("Succesfully singed up");
-    else alert("Successfully singed in");
-    //e.preventDefault();
+  const singUp = async (e) => {
+    alert(
+      `Remember \n UserName: ${userData.username} \n password: ${userData.password}`
+    );
+    Array.from(e.target).forEach((ev) => (ev.value = ""));
+    setIsSingIn(true);
+    e.preventDefault();
   };
 
   const handleSignIn = (isSingBool) => {
@@ -51,9 +76,9 @@ function LoginMain() {
   const singin = () => {
     if (isSingIn) {
       return (
-        <SingIn
+        <MemoizedSingIn
           setInput={setSingInInput}
-          handleSubmit={handleOnSubmit}
+          handleSubmit={singIn}
           handleSignIn={handleSignIn}
         />
       );
@@ -64,7 +89,7 @@ function LoginMain() {
       return (
         <SingUp
           setInput={setSingUpInput}
-          handleSubmit={handleOnSubmit}
+          handleSubmit={singUp}
           handleSignIn={handleSignIn}
         />
       );
