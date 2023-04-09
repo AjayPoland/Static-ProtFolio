@@ -12,6 +12,7 @@ import videodata from '../json/video.json'
 
 function Project() {  
     console.log("project");
+    //src of  videos and pictures in JSON file is stored in public folder.
   return (
     <div className="project-main">
       <h1 className="heading text-dark">Ongoing Project are listed below:-</h1>

@@ -14,13 +14,13 @@ function Welcome() {
           <h1>Hi!</h1>
         </header>
         <main>
-          <p>I am here to introduce myself as a <span className="fw-bold">software developer</span> . I
-            prefer to work mostly in the <span className="fw-bold">front-end designinng</span> although have a
+          <p>I am here to introduce myself as a <span className="fw-bold">software developer</span>. I
+            prefer to work mostly in the <span className="fw-bold">front-end designing</span> although have a
             knowledge of <span className="fw-bold">back-end programming.</span>
           </p>
           <p>
-            Nowadays, the IT world is changing drastically, by the empact of new
-            teachnology, to fullfill the demands of <span className="fw-bold">modern world requirement.</span>
+            Nowadays, the IT world is changing drastically, by the impact of new
+            technology, to fulfill the demands of <span className="fw-bold">modern world requirement.</span>
           </p>
           <p>
             I also want to contribute <span className="fw-bold">my skills in this sector</span> and be the part

@@ -16,38 +16,32 @@ const About=forwardRef(()=>{
           My birth country is <span className="fw-bold">India</span>. I grew up
           there and completed my study.{" "}
           <span className="fw-bold">
-            The languages in which i am fluent are (English, Hindi, Nepali,
+            The languages in which I am fluent are (English, Hindi, Nepali, and
             Bengali).
           </span>{" "}
-          Currently I am living in Poland since last few years. After working
-          here, I realize that I am in the wrong path. So, decideded to focused
-          to built the carrier in the field of which i belong too.{" "}
+          Currently I am living in Poland since last few years. After working here, I realize that I am in the wrong path. So, decide to focus to build the carrier in the field of which I belong too. {" "}
           <span className="fw-bold">
-            In the year 2015 I completed my study in computer science{" "}
+            In the year 2015 I completed my study in computer science
           </span>
-          , but unfertunately I didn't dived into the IT sector. <span className="fw-bold">Now i am
-          looking for the Entry level job opertunity to show my skills and keeping myself update
-          with the new technquie, skill of programming. </span>
+          , but unfortunately I didn't dive into the IT sector. <span className="fw-bold">Now I am
+          looking for the Entry level job opportunity to show my skills and keeping myself update
+          with the new technique, skill of programming. </span>
         </p>
         <p>
           {" "}
-          Since last 1 year I am studing and preparing for the Job interview and
-          made a habite of learning programming everyday atleast for more then
-          2hours and sometime the whole day.
+          Since last 1 year I am studding and preparing for the Job interview and made a habit of learning programming everyday at least for more than 2hours and sometime the whole day. 
           <span className="fw-bold">
             {" "}
-            I enjoy programming and making something creative everyday. Finding
-            bugs and fixing it, not repeating the same code multiple times is my
-            key strength.
+            I enjoy programming and making something creative every day. Finding bugs and fixing it, not repeating the same code multiple times is my key strength.
           </span>{" "}
           I am the good learner and love to work in the team.
         </p>
         <p>
           {" "}
-          The resources, i am using for learning programming are the{" "}
+          The resources, I am using for learning programming are the{" "}
           <span className="fw-bold">
-            open source and physical books of my institute(NIIT) India .I belive
-            as a fresher that I can help the people, organisation working in IT
+            open source and physical books of my institute(NIIT) India .I believe
+            as a fresher that I can help the people, organization working in IT
             sector.
           </span>
         </p>
